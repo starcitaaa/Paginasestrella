@@ -281,6 +281,262 @@
             margin: 0.5rem 0;
         }
 
+        /* Carrito de Compras - Navbar */
+        .carrito-navbar {
+            position: relative;
+            display: inline-block;
+        }
+
+        .carrito-navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .carrito-navbar a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        .carrito-badge {
+            background: #ff1493;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+            line-height: 1;
+        }
+
+        /* Carrito Flotante */
+        .carrito-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+            z-index: 100;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carrito-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+        }
+
+        .carrito-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff1493;
+            color: white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Carrito */
+        .modal-carrito {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-carrito.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 3px solid #ff69b4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            color: #ff1493;
+            font-size: 1.5rem;
+        }
+
+        .cerrar-modal {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #ff1493;
+        }
+
+        .modal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .carrito-vacio {
+            text-align: center;
+            color: #999;
+            padding: 2rem;
+        }
+
+        .carrito-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-nombre {
+            font-weight: bold;
+            color: #ff1493;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-precio {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .item-cantidad {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .btn-cantidad {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-cantidad:hover {
+            background: #ff1493;
+        }
+
+        .cantidad-numero {
+            min-width: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn-eliminar {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-eliminar:hover {
+            background: #ff5252;
+        }
+
+        .modal-footer {
+            padding: 1.5rem;
+            border-top: 3px solid #ff69b4;
+            background: #f9f9f9;
+        }
+
+        .total-carrito {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .total-cantidad {
+            color: #666;
+        }
+
+        .total-precio {
+            color: #ff1493;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .btn-comprar-todo {
+            width: 100%;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn-comprar-todo:hover {
+            opacity: 0.9;
+        }
+
+        .btn-comprar-todo:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h2 {
@@ -298,6 +554,18 @@
             .galeria {
                 grid-template-columns: 1fr;
             }
+
+            .carrito-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .modal-contenido {
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -305,6 +573,11 @@
     <!-- Navbar -->
     <nav>
         <h1>🐱✨ Gatos Felices y Baratos ✨🐱</h1>
+        <div style="position: absolute; right: 2rem; top: 50%; transform: translateY(-50%);">
+            <a href="Carrito.html" style="color: white; text-decoration: none; font-size: 1.2rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 8px; transition: background 0.3s;">
+                🛒 Mi Carrito
+            </a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -330,7 +603,7 @@
                         <p class="raza">El Cómico Profesional</p>
                         <p class="caracteristicas">Macho, 10 años. Experto en caras raras y situaciones cómicas. ¡Garantizado para hacerte reír!</p>
                         <p class="precio">$799</p>
-                        <button class="boton-comprar">¡Quiero a Sir Elegante! 💕</button>
+                        <button class="boton-comprar" onclick="agregarAlCarrito('Sir Elegante', '$799')">¡Quiero a Sir Elegante! 💕</button>
                     </div>
                 </div>
 
@@ -341,7 +614,7 @@
                         <p class="raza">La china adorable</p>
                         <p class="caracteristicas">Hembra, 1.5 años. Adora pedir mimos y hacer acrobacias. Comel latas.</p>
                         <p class="precio">$850</p>
-                        <button class="boton-comprar">¡Quiero a Calaja! 💕</button>
+                        <button class="boton-comprar" onclick="agregarAlCarrito('Calaja', '$850')">¡Quiero a Calaja! 💕</button>
                     </div>
                 </div>
 
@@ -352,7 +625,7 @@
                         <p class="raza">El gato solitario</p>
                         <p class="caracteristicas">Macho, 8 meses. Siempre le falla su fleco. Siempre cae, pero nunca sonríe. Puro amor en forma de emogato.</p>
                         <p class="precio">$749</p>
-                        <button class="boton-comprar">¡Quiero a Don Emonuel! 💕</button>
+                        <button class="boton-comprar" onclick="agregarAlCarrito('Don Emonuel', '$749')">¡Quiero a Don Emonuel! 💕</button>
                     </div>
                 </div>
 
@@ -363,7 +636,7 @@
                         <p class="raza">El Gruñón Extraterrestre</p>
                         <p class="caracteristicas">Macho, 2 años. Parece enojado pero es la más dulce. Roba vacas por las noches.</p>
                         <p class="precio">$899</p>
-                        <button class="boton-comprar">¡Quiero a Ovni! 💕</button>
+                        <button class="boton-comprar" onclick="agregarAlCarrito('Ovni', '$899')">¡Quiero a Ovni! 💕</button>
                     </div>
                 </div>
 
@@ -374,7 +647,7 @@
                         <p class="raza">El Rey de las Bromas</p>
                         <p class="caracteristicas">Macho, 1 año. Duerme en las posiciones más raras. Muerde patas.</p>
                         <p class="precio">$750</p>
-                        <button class="boton-comprar">¡Quiero a Patroclo! 💕</button>
+                        <button class="boton-comprar" onclick="agregarAlCarrito('Patroclo', '$750')">¡Quiero a Patroclo! 💕</button>
                     </div>
                 </div>
 
@@ -385,7 +658,7 @@
                         <p class="raza">El Gato Sistemas</p>
                         <p class="caracteristicas">Macho, 7 meses. Hackea feisbuks. Internet infinito y amor sin medida.</p>
                         <p class="precio">$875</p>
-                        <button class="boton-comprar">¡Quiero a Michistemas! 💕</button>
+                        <button class="boton-comprar" onclick="agregarAlCarrito('Michistemas', '$875')">¡Quiero a Michistemas! 💕</button>
                     </div>
                 </div>
             </div>
@@ -444,5 +717,196 @@
         <p>🐱💗 Gatos Felices y Mañosos - Criadores de Gatitos Insoportables desde 2006 💗🐱</p>
         <p>¡Porque merecen lo mejor! 🌸✨</p>
     </footer>
+
+    <!-- Botón Carrito Flotante -->
+    <button class="carrito-btn" onclick="toggleCarrito()">
+        🛒
+        <span class="carrito-count" id="carrito-count">0</span>
+    </button>
+
+    <!-- Modal Carrito -->
+    <div class="modal-carrito" id="modal-carrito">
+        <div class="modal-contenido">
+            <div class="modal-header">
+                <h3>🛒 Mi Carrito</h3>
+                <button class="cerrar-modal" onclick="toggleCarrito()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div id="carrito-lista" class="carrito-vacio">
+                    <p>Tu carrito está vacío</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="total-carrito">
+                    <span class="total-cantidad">Total: <span id="total-items">0</span> gatos</span>
+                    <span class="total-precio">$<span id="total-precio">0</span></span>
+                </div>
+                <button class="btn-comprar-todo" id="btn-finalizar" onclick="finalizarCompra()" disabled>
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript del Carrito -->
+    <script>
+        // Estado del carrito
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        // Función para abrir/cerrar carrito
+        function toggleCarrito() {
+            const modal = document.getElementById('modal-carrito');
+            modal.classList.toggle('activo');
+            if (modal.classList.contains('activo')) {
+                actualizarCarrito();
+            }
+        }
+
+        // Función para agregar al carrito
+        function agregarAlCarrito(nombre, precio) {
+            const item = carrito.find(g => g.nombre === nombre);
+            
+            if (item) {
+                item.cantidad++;
+            } else {
+                carrito.push({
+                    nombre: nombre,
+                    precio: parseFloat(precio.replace('$', '')),
+                    cantidad: 1
+                });
+            }
+            
+            guardarCarrito();
+            actualizarCarrito();
+            mostrarNotificacion(`✅ ${nombre} agregado al carrito`);
+        }
+
+        // Función para eliminar del carrito
+        function eliminarDelCarrito(nombre) {
+            carrito = carrito.filter(g => g.nombre !== nombre);
+            guardarCarrito();
+            actualizarCarrito();
+        }
+
+        // Función para cambiar cantidad
+        function cambiarCantidad(nombre, cambio) {
+            const item = carrito.find(g => g.nombre === nombre);
+            if (item) {
+                item.cantidad += cambio;
+                if (item.cantidad <= 0) {
+                    eliminarDelCarrito(nombre);
+                } else {
+                    guardarCarrito();
+                    actualizarCarrito();
+                }
+            }
+        }
+
+        // Función para guardar carrito en localStorage
+        function guardarCarrito() {
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+        }
+
+        // Función para actualizar vista del carrito
+        function actualizarCarrito() {
+            const lista = document.getElementById('carrito-lista');
+            const contador = document.getElementById('carrito-count');
+            const totalItems = document.getElementById('total-items');
+            const totalPrecio = document.getElementById('total-precio');
+            const btnFinalizar = document.getElementById('btn-finalizar');
+
+            // Actualizar contador
+            const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+            contador.textContent = totalCantidad;
+
+            if (carrito.length === 0) {
+                lista.innerHTML = '<div class="carrito-vacio"><p>Tu carrito está vacío 😿</p></div>';
+                totalItems.textContent = '0';
+                totalPrecio.textContent = '0';
+                btnFinalizar.disabled = true;
+            } else {
+                // Construir HTML del carrito
+                lista.innerHTML = carrito.map(item => `
+                    <div class="carrito-item">
+                        <div class="item-info">
+                            <div class="item-nombre">${item.nombre}</div>
+                            <div class="item-precio">$${item.precio.toFixed(2)}</div>
+                        </div>
+                        <div class="item-cantidad">
+                            <button class="btn-cantidad" onclick="cambiarCantidad('${item.nombre}', -1)">-</button>
+                            <span class="cantidad-numero">${item.cantidad}</span>
+                            <button class="btn-cantidad" onclick="cambiarCantidad('${item.nombre}', 1)">+</button>
+                        </div>
+                        <button class="btn-eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
+                    </div>
+                `).join('');
+
+                // Calcular totales
+                const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+                totalItems.textContent = totalCantidad;
+                totalPrecio.textContent = total.toFixed(2);
+                btnFinalizar.disabled = false;
+            }
+        }
+
+        // Función para finalizar compra
+        function finalizarCompra() {
+            if (carrito.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+
+            const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+            const cantidadGatos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+            
+            alert(`🎉 ¡Compra finalizada!\n\nGatos comprados: ${cantidadGatos}\nTotal: $${total.toFixed(2)}\n\n¡Gracias por tu compra! 💕`);
+            
+            carrito = [];
+            guardarCarrito();
+            actualizarCarrito();
+            toggleCarrito();
+        }
+
+        // Función para mostrar notificación
+        function mostrarNotificacion(mensaje) {
+            const notif = document.createElement('div');
+            notif.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #ff69b4;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+                z-index: 300;
+                animation: slideIn 0.3s ease;
+            `;
+            notif.textContent = mensaje;
+            document.body.appendChild(notif);
+
+            setTimeout(() => {
+                notif.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notif.remove(), 300);
+            }, 2000);
+        }
+
+        // Agregar estilos de animación
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+    </script>
+    <!-- Enlazar archivo js.js -->
+    <script src="js.js"></script>
 </body>
 </html>
